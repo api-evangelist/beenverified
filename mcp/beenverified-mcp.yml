@@ -1,0 +1,20 @@
+generated: '2026-09-27'
+method: derived
+generator: derive-mcp-candidate.py
+source:
+- openapi/beenverified-openapi.json
+status: candidate
+deployment:
+  mode: none
+  auth: unknown
+  verified: probed
+note: 'No MCP server was found. The pre-flight posted tools/list to /mcp on api.beenverified.com, support.beenverified.com, www.beenverified.com,
+  apidocs.beenverified.com; verdict opaque (https://support.beenverified.com/mcp answered 401: the edge authenticates before it routes, which
+  proves nothing either way). Candidate tools below are derived from the 1 operation(s) in the provider''s own OpenAPI (1 listed); they describe
+  what a server WOULD expose, not one that exists.'
+tools:
+- name: create_v1_append
+  operationId: POST /sandbox/v1/append
+  method: POST
+  path: /sandbox/v1/append
+  description: Enrich contact data

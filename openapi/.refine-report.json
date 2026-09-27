@@ -1,0 +1,25 @@
+{
+  "provider": "beenverified",
+  "sources": [
+    "beenverified-openapi.json"
+  ],
+  "outputs": [
+    "beenverified-append-api-openapi.yml",
+    "beenverified-append-sandbox-api-openapi.yml"
+  ],
+  "archived": [
+    "archived openapi/beenverified-openapi.json"
+  ],
+  "errors": [
+    "beenverified-openapi.json: dangling $ref: #/definitions/IncomingEnrichmentParams",
+    "beenverified-openapi.json: dangling $ref: #/definitions/OutgoingEnrichmentEntitiesResponse"
+  ],
+  "warnings": [],
+  "notes": [
+    "beenverified-openapi.json: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "beenverified-openapi.json: declared missing tag: append",
+    "beenverified-openapi.json: declared missing tag: append_sandbox",
+    "apis.yml register: written (+2 apis, 2 total)"
+  ],
+  "skipped": []
+}

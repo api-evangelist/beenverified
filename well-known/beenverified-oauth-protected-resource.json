@@ -1,0 +1,1 @@
+{"resource":"https://www.bumper.com/ms/ltvco-prod-apis-mcp-server/mcp/reports","authorization_servers":["https://www.bumper.com"],"scopes_supported":["vehicle.reports.create"],"bearer_methods_supported":["header"]}

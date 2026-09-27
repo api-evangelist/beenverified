@@ -1,0 +1,39 @@
+generated: '2026-09-27'
+method: derived
+generator: derive-problem-types.py
+source:
+- openapi/beenverified-openapi.json
+format: custom
+envelope:
+  media_type: null
+  schema: null
+coverage:
+  operations: 2
+  statuses_declared: 4
+problems:
+- status: 400
+  title: Bad Request
+  description: When invalid or incomplete input is given
+  operations: 2
+  media_types: []
+  schema: null
+- status: 401
+  title: Unauthorized
+  description: When the account does not have enough credits, does not have API access, or is otherwise unable to
+    access certain account features. If you b
+  operations: 1
+  media_types: []
+  schema: null
+- status: 413
+  title: Content Too Large
+  description: When the request body exceeds the allowed size limit
+  operations: 2
+  media_types: []
+  schema: null
+- status: 500
+  title: Internal Server Error
+  description: When there is an issue with the server and the request cannot be completed. If you believe you are
+    receiving this response erroneously, plea
+  operations: 1
+  media_types: []
+  schema: null

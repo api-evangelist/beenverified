@@ -1,0 +1,64 @@
+openapi: 3.2.0
+info:
+  description: '## Overview
+
+
+    The BeenVerified Append API enriches a person record with contact and identity data.'
+  title: BeenVerified Append API
+  contact:
+    name: API Support
+    email: apisupport@beenverified.com
+  version: 1.0.0
+servers:
+- url: https://api.beenverified.com
+tags:
+- name: Append
+paths:
+  /v1/append:
+    post:
+      security:
+      - BearerAuth: []
+      description: Return contact and identity information for a person given one or more identifying inputs (email, phone, age, name paired with one of those, or a complete address of street, city, and state).
+      tags:
+      - Append
+      summary: Enrich contact data
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OutgoingEnrichmentEntitiesResponse'
+        '400':
+          description: When invalid or incomplete input is given
+          content:
+            application/json:
+              schema:
+                type: string
+        '401':
+          description: When the account does not have enough credits, does not have API access, or is otherwise unable to access certain account features. If you believe you are receiving this response erroneously, please contact us at apisupport@beenverified.com.
+          content:
+            application/json:
+              schema:
+                type: string
+        '413':
+          description: When the request body exceeds the allowed size limit
+          content:
+            application/json:
+              schema:
+                type: string
+        '500':
+          description: When there is an issue with the server and the request cannot be completed. If you believe you are receiving this response erroneously, please contact us at apisupport@beenverified.com.
+          content:
+            application/json:
+              schema:
+                type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IncomingEnrichmentParams'
+        description: Enrichment input
+        required: true
+      operationId: postV1Append
+      x-operation-id-source: derived

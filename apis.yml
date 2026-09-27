@@ -1,23 +1,122 @@
 aid: beenverified
+
 name: Beenverified
-description: 'Beenverified is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: BeenVerified provides a consumer‑focused platform that aggregates public records, people search, reverse phone lookup, email lookup,
+  address lookup, vehicle lookup, and other background‑check services. Users can access a wide range of data sources to verify identities, locate
+  individuals, and obtain contact information, all through a web interface and mobile apps. The service emphasizes ease of use, comprehensive
+  coverage, and compliance with privacy regulations.
+
 url: https://raw.githubusercontent.com/api-evangelist/beenverified/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-27 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-27'
+
 modified: '2026-09-27'
+
 tags:
 - Company
-apis: []
+- Background-Check
+- People-Search
+- Data-API
+- Consumer-Services
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: AgenticAccess
+  url: agentic-access/beenverified-agentic-access.yml
+- type: Spectral
+  url: rules/beenverified-rules.yml
+- type: ErrorCatalog
+  url: errors/beenverified-problem-types.yml
+- type: Conformance
+  url: conformance/beenverified-conformance.yml
+- type: SecurityTxt
+  url: well-known/beenverified-security.txt
+- type: SecurityTxt
+  url: well-known/beenverified-business-security.txt
+- type: WellKnown
+  url: well-known/beenverified-well-known.yml
+- type: Hosts
+  url: hosts/beenverified-hosts.yml
+- type: Vendors
+  url: vendors/beenverified-vendors.yml
+- type: TermsOfService
+  url: https://www.beenverified.com/faq/terms-conditions/
+- type: Security
+  url: https://www.beenverified.com/security/
+- type: PrivacyPolicy
+  url: https://www.beenverified.com/faq/privacy/
+- type: Newsroom
+  url: https://www.beenverified.com/press/
+- type: Login
+  url: https://www.beenverified.com/login
+- type: Leadership
+  url: https://www.beenverified.com/about/leadership/
+- type: APIReference
+  url: https://apidocs.beenverified.com/
+- type: VulnerabilityDisclosure
+  url: security/beenverified-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/beenverified-domain-security.yml
 - type: Website
-  url: https://augment.market/c/beenverified
+  url: https://www.beenverified.com
+- type: Support
+  url: https://support.beenverified.com/hc/en-us
+- type: Pricing
+  url: https://www.beenverified.com/pricing/
+- type: Blog
+  url: https://www.beenverified.com/articles/
+
+apis:
+- aid: beenverified:beenverified-append-api
+  name: Beenverified Append API
+  description: The append API from Beenverified — 1 operation(s) for append.
+  humanURL: https://apidocs.beenverified.com/
+  baseURL: https://api.beenverified.com
+  tags:
+  - append
+  properties:
+  - type: OpenAPI
+    url: openapi/beenverified-append-api-openapi.yml
+- aid: beenverified:beenverified-append-sandbox-api
+  name: Beenverified Append Sandbox API
+  description: The append_sandbox API from Beenverified — 1 operation(s) for append_sandbox.
+  humanURL: https://apidocs.beenverified.com/
+  baseURL: https://api.beenverified.com
+  tags:
+  - append_sandbox
+  properties:
+  - type: OpenAPI
+    url: openapi/beenverified-append-sandbox-api-openapi.yml
+x-coverage:
+  state: none
+  reason: no-developer-program
+  method: derived
+  generated: '2026-09-27'
+  generator: derive-coverage.py (pre-flight evidence)
+  detail: the company publishes no developer documentation host and no machine-readable contract on its own domain
+  evidence:
+  - url: https://support.beenverified.com/mcp
+    status: 401
+  - url: https://apidocs.beenverified.com/mcp
+    status: 403
+x-enrichment:
+  date: '2026-09-27'
+  status: enriched
+  artifacts_added: 14
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local

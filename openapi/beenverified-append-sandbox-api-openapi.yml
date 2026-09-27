@@ -1,0 +1,52 @@
+openapi: 3.2.0
+info:
+  description: '## Overview
+
+
+    The BeenVerified Append API enriches a person record with contact and identity data.'
+  title: BeenVerified Append Sandbox API
+  contact:
+    name: API Support
+    email: apisupport@beenverified.com
+  version: 1.0.0
+servers:
+- url: https://api.beenverified.com
+tags:
+- name: append_sandbox
+paths:
+  /sandbox/v1/append:
+    post:
+      security:
+      - BearerAuth: []
+      description: Return mock contact and identity information for a person given one or more identifying inputs.
+      tags:
+      - append_sandbox
+      summary: Enrich contact data
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OutgoingEnrichmentEntitiesResponse'
+        '400':
+          description: When invalid or incomplete input is given
+          content:
+            application/json:
+              schema:
+                type: string
+        '413':
+          description: When the request body exceeds the allowed size limit
+          content:
+            application/json:
+              schema:
+                type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IncomingEnrichmentParams'
+        description: Enrichment input
+        required: true
+      operationId: postSandboxV1Append
+      x-operation-id-source: derived
