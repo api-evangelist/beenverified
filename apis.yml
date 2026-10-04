@@ -22,7 +22,16 @@ created: '2026-09-27'
 
 modified: '2026-09-27'
 
+x-docs-platform: swagger-ui
+x-docs-platform-confidence: medium
+x-docs-platform-checked: 2026-10-03
 tags:
+- Company
+- Background Checks
+- People Search
+- Data API
+- Consumer Services
+tags_raw:
 - Company
 - Background-Check
 - People-Search
@@ -88,6 +97,8 @@ apis:
   humanURL: https://apidocs.beenverified.com/
   baseURL: https://api.beenverified.com
   tags:
+  - Append
+  tags_raw:
   - append
   properties:
   - type: OpenAPI
@@ -97,7 +108,8 @@ apis:
   description: The append_sandbox API from Beenverified — 1 operation(s) for append_sandbox.
   humanURL: https://apidocs.beenverified.com/
   baseURL: https://api.beenverified.com
-  tags:
+  tags: []
+  tags_raw:
   - append_sandbox
   properties:
   - type: OpenAPI
